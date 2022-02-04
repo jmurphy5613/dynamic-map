@@ -11,7 +11,7 @@
     "leaflet-draw": "^1.0.4",
     "leaflet.markercluster": "^1.4.1",
     "moment": "^2.27.0",
-    "re-base": "^4.0.0",
+    "re-base": "4.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-firebase-hooks": "^2.2.0",
