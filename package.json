@@ -15,14 +15,14 @@
     "react-dom": "^16.13.1",
     "react-firebase-hooks": "^2.2.0",
     "react-leaflet": "^2.7.0",
-    "react-leaflet-draw": "^0.19.8",
+    "react-leaflet-draw": "^0.19.0",
     "react-leaflet-markercluster": "^2.0.0",
     "react-leaflet-search": "^1.0.3",
     "react-leaflet-sidebarv2": "^0.6.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "sidebar-v2": "^0.4.0",
-    "simplebar": "^5.3.6"
+    "simplebar": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
