@@ -21,9 +21,9 @@
     "react-leaflet-search": "^1.0.3",
     "react-leaflet-sidebarv2": "^0.6.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.1",
     "sidebar-v2": "0.4.0",
-    "simplebar": "5.2.1"
+    "simplebar": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
