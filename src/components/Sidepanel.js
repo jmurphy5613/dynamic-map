@@ -167,7 +167,8 @@ function Sidepanel(props) {
                                     className="inTextIcon climate"
                                     src="/icons/tool_add_climate.png"
                                     alt=""
-                                />{" "}to identify potential local climate action.
+                                />{" "}
+                                to propose local climate ideas.
 
                             </p>
                         </div>

@@ -48,15 +48,15 @@ function SideComment(props) {
                     src={`/icons/${comment.type}.png`}
                 />
                 {comment &&
-                    comment.type === "climate".toUpperCase()}
+                    comment.type === "climate" && comment.type.toUpperCase()}
                 {comment &&
-                    comment.type === "equity".toUpperCase()}
+                    comment.type === "equity" && comment.type.toUpperCase()}
                 {comment &&
-                    comment.type === "vibrancy".toUpperCase()}
+                    comment.type === "vibrancy" && comment.type.toUpperCase()}
                 {comment &&
-                    comment.type === "community".toUpperCase()}
+                    comment.type === "community" && comment.type.toUpperCase()}
                 {comment &&
-                    comment.type === "transparency".toUpperCase()}
+                    comment.type === "transparency" && comment.type.toUpperCase()}
             </h3>
             <div className="comment">
                 <h3 className="commentContent">{comment.comment}</h3>
