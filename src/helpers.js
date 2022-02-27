@@ -66,7 +66,7 @@ function generateSampleData() {
     let comments = {};
     let replies = {};
 
-    const iconTypes = ["idea", "issue", "place"];
+    const iconTypes = ["climate", "equity", "vibrancy", "community", "transparency"];
     const bys = [
         "Jane Smith",
         "Zoe Patel",
@@ -172,24 +172,38 @@ export { generateSampleData };
 
 function getIcons() {
     return {
-        idea: L.Icon.extend({
+        climate: L.Icon.extend({
             options: {
-                iconUrl: "./icons/idea.png",
+                iconUrl: "./icons/climate.png",
                 iconAnchor: new L.Point(38, 18),
                 iconSize: new L.Point(76, 76),
             },
         }),
 
-        issue: L.Icon.extend({
+        equity: L.Icon.extend({
             options: {
-                iconUrl: "./icons/issue.png",
+                iconUrl: "./icons/equity.png",
                 iconAnchor: new L.Point(38, 18),
                 iconSize: new L.Point(75, 75),
             },
         }),
-        place: L.Icon.extend({
+        vibrancy: L.Icon.extend({
             options: {
-                iconUrl: "./icons/place.png",
+                iconUrl: "./icons/vibrancy.png",
+                iconAnchor: new L.Point(38, 22),
+                iconSize: new L.Point(75, 75),
+            },
+        }),
+        community: L.Icon.extend({
+            options: {
+                iconUrl: "./icons/community.png",
+                iconAnchor: new L.Point(38, 22),
+                iconSize: new L.Point(75, 75),
+            },
+        }),
+        transparency: L.Icon.extend({
+            options: {
+                iconUrl: "./icons/transparency.png",
                 iconAnchor: new L.Point(38, 22),
                 iconSize: new L.Point(75, 75),
             },

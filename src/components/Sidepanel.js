@@ -78,7 +78,7 @@ function Sidepanel(props) {
                             </p>
                         </div>
                         <div className="infoType">
-                            <img className="textIcon" src="/icons/idea_user.png" alt="" />
+                            <img className="textIcon" src="/icons/climate_user.png" alt="" />
                             <p>
                                 <b>Idea:</b> utilice el {" "}<img
                                     className="inTextIcon"
@@ -160,58 +160,68 @@ function Sidepanel(props) {
 
 
                         <div className="infoType">
-                            <img className="textIcon" src="/icons/place_user.png" alt="" />
+                            <img className="textIcon" src="/icons/climate.png" alt="" />
                             <p>
-                                <b>Special Place:</b> Use the{" "}
+                                <b>Climate:</b> Use the{" "}
                                 <img
-                                    className="inTextIcon place"
-                                    src="/icons/tool_add_place.png"
+                                    className="inTextIcon climate"
+                                    src="/icons/tool_add_climate.png"
                                     alt=""
-                                />{" "}to identify important places in Medford and share stories about why these places matter to you.
+                                />{" "}to identify potential local climate action.
 
                             </p>
                         </div>
                         <div className="infoType">
-                            <img className="textIcon" src="/icons/idea_user.png" alt="" />
+                            <img className="textIcon" src="/icons/equity.png" alt="" />
                             <p>
-                                <b>Idea:</b> Use the {" "}<img
+                                <b>Equity:</b> Use the {" "}<img
                                     className="inTextIcon"
-                                    src="/icons/tool_add_idea.png"
+                                    src="/icons/tool_add_equity.png"
                                     alt=""
                                 />{" "}
-                                to add your ideas for improving Medford. Are there places you would like to change or preserve? What’s missing in Medford, and where should it go?
+                                to identify ways to make Medford more equitable.
                             </p>
                         </div>
                         <div className="infoType">
-                            <img className="textIcon" src="/icons/issue_user.png" alt="" />
+                            <img className="textIcon" src="/icons/vibrancy.png" alt="" />
                             <p>
-                                <b>Problem:</b> Use the{" "}
+                                <b>Vibrancy:</b> Use the{" "}
                                 <img
                                     className="inTextIcon"
-                                    src="/icons/tool_add_issue.png"
+                                    src="/icons/tool_add_vibrancy.png"
                                     alt=""
                                 />{" "}
-                                to highlight problems or concerns you would like to see fixed.
+                                to identify ways to make Medford more vibrant.
+                            </p>
+                        </div>
+                        
+                        <div className="infoType">
+                            <img className="textIcon" src="/icons/community.png" alt="" />
+                            <p>
+                                <b>Community:</b> Use the{" "}
+                                <img
+                                    className="inTextIcon"
+                                    src="/icons/tool_add_community.png"
+                                    alt=""
+                                />{" "}
+                                to identify ways to support Medford's community.
+                            </p>
+                        </div>
+                        
+                        <div className="infoType">
+                            <img className="textIcon" src="/icons/transparency.png" alt="" />
+                            <p>
+                                <b>Transparency:</b> Use the{" "}
+                                <img
+                                    className="inTextIcon"
+                                    src="/icons/tool_add_transparency.png"
+                                    alt=""
+                                />{" "}
+                                to identify ways to make Medford more transparent.
                             </p>
                         </div>
                         <p>
-                        Each time you place a {" "}
-                                <img
-                                    className="inTextIcon place"
-                                    src="/icons/tool_add_place.png"
-                                    alt=""
-                                />, {" "}
-                                <img
-                                    className="inTextIcon"
-                                    src="/icons/tool_add_idea.png"
-                                    alt=""
-                                />
-                                , {" "}
-                                <img
-                                    className="inTextIcon"
-                                    src="/icons/tool_add_issue.png"
-                                    alt=""
-                                /> add a comment to share what you are thinking.  You can add as many places, ideas, or issues as you want.
+                        Each time you place a pin, add a comment to share what you are thinking. You can add as many pins as you want.
                         </p>
                         <p>
                         When you click “Post” your icon and comment will be added to the map. You can change your comments until you close the map. Please be respectful, as everyone can see the comments you share.

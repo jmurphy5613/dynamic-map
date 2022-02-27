@@ -5,7 +5,6 @@ import {
     TileLayer,
     LayersControl,
     Marker,
-    GeoJSON,
     Popup,
 } from "react-leaflet";
 import Search from "react-leaflet-search";
@@ -15,9 +14,7 @@ import moment from "moment";
 
 import {
     getIcons,
-    getBoundary,
     getRelationshipText,
-    generateSampleData,
 } from "../helpers";
 import Draw from "./Draw";
 import Sidepanel from "./Sidepanel";
@@ -29,7 +26,6 @@ import "./Leaflet.css";
 function Leaflet(props) {
     const user = props.user;
     const admin = props.admin;
-    // const boundary = getBoundary();
     const icons = getIcons();
     const position = [42.424930, -71.128840];
     const mapStyle = { height: "100vh" };
@@ -38,9 +34,11 @@ function Leaflet(props) {
     const [comments, setComments] = useState({});
     const [replies, setReplies] = useState({});
     const [filterOpen, setFilter] = useState(false);
-    const [places, setPlaces] = useState(true);
-    const [ideas, setIdeas] = useState(true);
-    const [issues, setIssues] = useState(true);
+    const [climate, setClimate] = useState(true);
+    const [equity, setEquity] = useState(true);
+    const [vibrancy, setVibrancy] = useState(true);
+    const [community, setCommunity] = useState(true);
+    const [transparency, setTransparency] = useState(true);
 
     const saveData = (firebase) => {
         firebase.database().ref("points").set(points);
@@ -110,7 +108,6 @@ function Leaflet(props) {
                 });
         }
 
-        // const data = generateSampleData();
         // setPoints({ ...data.points });
         // setComments({ ...data.comments });
         // setReplies({ ...data.replies });
@@ -211,12 +208,16 @@ function Leaflet(props) {
         layer.openPopup();
         L.zoomSnap = 0;
         let icon = layer.options.icon.options.iconUrl;
-        if (icon.includes("issue")) {
-            icon = "issue";
-        } else if (icon.includes("idea")) {
-            icon = "idea";
+        if (icon.includes("climate")) {
+            icon = "climate";
+        } else if (icon.includes("equity")) {
+            icon = "equity";
+        } else if (icon.includes("vibrancy")) {
+            icon = "vibrancy";
+        } else if (icon.includes("community")) {
+            icon = "community";
         } else {
-            icon = "place";
+            icon = "transparency";
         }
         layer.properties.type = icon;
 
@@ -237,7 +238,6 @@ function Leaflet(props) {
             commentBy: name,
             featured: true,
             hidden: false,
-            /*neighboorhood: neighboorhood,*/
             work: work,
             live: live,
             visit: visit,
@@ -311,12 +311,16 @@ function Leaflet(props) {
     };
 
     const filterClick = (type, active) => {
-        if (type === "place") {
-            setPlaces(!active);
-        } else if (type === "idea") {
-            setIdeas(!active);
+        if (type === "climate") {
+            setClimate(!active);
+        } else if (type === "equity") {
+            setEquity(!active);
+        } else if (type === "vibrancy") {
+            setVibrancy(!active);
+        } else if (type === "community") {
+            setCommunity(!active);
         } else {
-            setIssues(!active);
+            setTransparency(!active);
         }
 
         Object.keys(points).map((key) => {
@@ -489,38 +493,62 @@ function Leaflet(props) {
                                 <div className="filterGroup">
                                     <input
                                         type="checkbox"
-                                        name="place"
-                                        id="filterPlace"
-                                        checked={places}
+                                        name="climate"
+                                        id="filterClimate"
+                                        checked={climate}
                                         onChange={() =>
-                                            filterClick("place", places)
+                                            filterClick("climate", climate)
                                         }
                                     />
-                                    <label htmlFor="place">Places</label>
+                                    <label htmlFor="climate">Climate</label>
                                 </div>
                                 <div className="filterGroup">
                                     <input
                                         type="checkbox"
-                                        name="idea"
-                                        id="filterIdea"
-                                        checked={ideas}
+                                        name="equity"
+                                        id="filterEquity"
+                                        checked={equity}
                                         onChange={() =>
-                                            filterClick("idea", ideas)
+                                            filterClick("equity", equity)
                                         }
                                     />
-                                    <label htmlFor="place">Ideas</label>
+                                    <label htmlFor="equity">Equity</label>
                                 </div>
                                 <div className="filterGroup">
                                     <input
                                         type="checkbox"
-                                        name="issue"
-                                        id="filterissue"
-                                        checked={issues}
+                                        name="vibrancy"
+                                        id="filterVibrancy"
+                                        checked={vibrancy}
                                         onChange={() =>
-                                            filterClick("issue", issues)
+                                            filterClick("vibrancy", vibrancy)
                                         }
                                     />
-                                    <label htmlFor="place">Problems</label>
+                                    <label htmlFor="vibrancy">Vibrancy</label>
+                                </div>
+                                <div className="filterGroup">
+                                    <input
+                                        type="checkbox"
+                                        name="community"
+                                        id="filterCommunity"
+                                        checked={community}
+                                        onChange={() =>
+                                            filterClick("community", community)
+                                        }
+                                    />
+                                    <label htmlFor="community">Community</label>
+                                </div>
+                                <div className="filterGroup">
+                                    <input
+                                        type="checkbox"
+                                        name="transparency"
+                                        id="filterTransparency"
+                                        checked={transparency}
+                                        onChange={() =>
+                                            filterClick("transparency", transparency)
+                                        }
+                                    />
+                                    <label htmlFor="transparency">Transparency</label>
                                 </div>
                             </div>
                         )}

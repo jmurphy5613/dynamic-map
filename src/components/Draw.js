@@ -10,18 +10,28 @@ const Draw = () => {
     const { map } = useLeaflet();
 
     // Hacky stuff below
-    var smallPlaceBlue = new L.Icon({
-        iconUrl: "./icons/place_user.png",
+    var smallClimateBlue = new L.Icon({
+        iconUrl: "./icons/climate_user.png",
         iconSize: [75, 75],
         iconAnchor: [38, 28],
     });
-    var smallIdeaBlue = new L.Icon({
-        iconUrl: "./icons/idea_user.png",
+    var smallEquityBlue = new L.Icon({
+        iconUrl: "./icons/equity_user.png",
         iconSize: [75, 75],
         iconAnchor: [38, 22],
     });
-    var smallIssueBlue = new L.Icon({
-        iconUrl: "./icons/issue_user.png",
+    var smallVibrancyBlue = new L.Icon({
+        iconUrl: "./icons/vibrancy_user.png",
+        iconSize: [75, 75],
+        iconAnchor: [38, 25],
+    });
+    var smallCommunityBlue = new L.Icon({
+        iconUrl: "./icons/community_user.png",
+        iconSize: [75, 75],
+        iconAnchor: [38, 25],
+    });
+    var smallTransparencyBlue = new L.Icon({
+        iconUrl: "./icons/transparency_user.png",
         iconSize: [75, 75],
         iconAnchor: [38, 25],
     });
@@ -32,18 +42,28 @@ const Draw = () => {
                 {
                     
                     enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallPlaceBlue }),
-                    title: "Add a Special Place",
+                    handler: new L.Draw.Marker(map, { icon: smallClimateBlue }),
+                    title: "Add Climate Action",
                 },
                 {
                     enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallIdeaBlue }),
-                    title: "Add an Idea",
+                    handler: new L.Draw.Marker(map, { icon: smallEquityBlue }),
+                    title: "Add Equity Action",
                 },
                 {
                     enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallIssueBlue }),
-                    title: "Add a Problem",
+                    handler: new L.Draw.Marker(map, { icon: smallVibrancyBlue }),
+                    title: "Add Vibrancy Action",
+                },
+                {
+                    enabled: true,
+                    handler: new L.Draw.Marker(map, { icon: smallCommunityBlue }),
+                    title: "Add Community Action",
+                },
+                {
+                    enabled: true,
+                    handler: new L.Draw.Marker(map, { icon: smallTransparencyBlue }),
+                    title: "Add Transparency Action",
                 },
             ];
         },
@@ -51,7 +71,7 @@ const Draw = () => {
 
     L.drawLocal.draw.toolbar.buttons.marker = "Add a comment";
     L.drawLocal.draw.handlers.marker.tooltip.start =
-        "Click map to pin Idea, Problem, or Special Place";
+        "Click map to pin an Action item";
     L.drawLocal.edit.toolbar.actions.save.text = "Save Changes";
     L.drawLocal.edit.toolbar.actions.cancel.text = "Undo";
     L.drawLocal.edit.handlers.remove.tooltip.text =

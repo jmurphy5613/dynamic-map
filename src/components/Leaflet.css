@@ -277,6 +277,7 @@ div.markerFilter {
     /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65); */
 }
 
+/* NOT IN USE */
 div.markerFilter.idea.active {
     background-image: url("/icons/layer_idea.png");
 }
