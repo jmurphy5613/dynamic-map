@@ -169,7 +169,6 @@ function Sidepanel(props) {
                                     alt=""
                                 />{" "}
                                 to propose local climate ideas.
-
                             </p>
                         </div>
                         <div className="infoType">
