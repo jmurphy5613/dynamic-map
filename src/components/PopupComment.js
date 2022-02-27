@@ -35,6 +35,7 @@ function PopupComment(props) {
 
     return (
         <div className="comment">
+            <p className="commentType"><b>{comment.type.toUpperCase()}:</b></p>
             <h3 className="commentContent">{comment.comment}</h3>
             <p className="commentBy">
                 {"by "}
