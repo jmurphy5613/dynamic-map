@@ -35,10 +35,10 @@ function Leaflet(props) {
     const [replies, setReplies] = useState({});
     const [filterOpen, setFilter] = useState(false);
     const [climate, setClimate] = useState(true);
-    const [equity, setEquity] = useState(true);
+    const [accessibility, setAccessibility] = useState(true);
     const [vibrancy, setVibrancy] = useState(true);
     const [community, setCommunity] = useState(true);
-    const [transparency, setTransparency] = useState(true);
+    const [engagement, setEngagement] = useState(true);
 
     const saveData = (firebase) => {
         firebase.database().ref("points").set(points);
@@ -210,14 +210,14 @@ function Leaflet(props) {
         let icon = layer.options.icon.options.iconUrl;
         if (icon.includes("climate")) {
             icon = "climate";
-        } else if (icon.includes("equity")) {
-            icon = "equity";
+        } else if (icon.includes("accessibility")) {
+            icon = "accessibility";
         } else if (icon.includes("vibrancy")) {
             icon = "vibrancy";
         } else if (icon.includes("community")) {
             icon = "community";
         } else {
-            icon = "transparency";
+            icon = "engagement";
         }
         layer.properties.type = icon;
 
@@ -313,14 +313,14 @@ function Leaflet(props) {
     const filterClick = (type, active) => {
         if (type === "climate") {
             setClimate(!active);
-        } else if (type === "equity") {
-            setEquity(!active);
+        } else if (type === "accessibility") {
+            setAccessibility(!active);
         } else if (type === "vibrancy") {
             setVibrancy(!active);
         } else if (type === "community") {
             setCommunity(!active);
         } else {
-            setTransparency(!active);
+            setEngagement(!active);
         }
 
         Object.keys(points).map((key) => {
@@ -505,14 +505,14 @@ function Leaflet(props) {
                                 <div className="filterGroup">
                                     <input
                                         type="checkbox"
-                                        name="equity"
-                                        id="filterEquity"
-                                        checked={equity}
+                                        name="accessibility"
+                                        id="filterAccessibility"
+                                        checked={accessibility}
                                         onChange={() =>
-                                            filterClick("equity", equity)
+                                            filterClick("accessibility", accessibility)
                                         }
                                     />
-                                    <label htmlFor="equity">Equity</label>
+                                    <label htmlFor="accessibility">Accessibility</label>
                                 </div>
                                 <div className="filterGroup">
                                     <input
@@ -541,14 +541,14 @@ function Leaflet(props) {
                                 <div className="filterGroup">
                                     <input
                                         type="checkbox"
-                                        name="transparency"
-                                        id="filterTransparency"
-                                        checked={transparency}
+                                        name="engagement"
+                                        id="filterEngagement"
+                                        checked={engagement}
                                         onChange={() =>
-                                            filterClick("transparency", transparency)
+                                            filterClick("engagement", engagement)
                                         }
                                     />
-                                    <label htmlFor="transparency">Transparency</label>
+                                    <label htmlFor="engagement">Engagement</label>
                                 </div>
                             </div>
                         )}

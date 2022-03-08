@@ -50,13 +50,13 @@ function SideComment(props) {
                 {comment &&
                     comment.type === "climate" && comment.type.toUpperCase()}
                 {comment &&
-                    comment.type === "equity" && comment.type.toUpperCase()}
+                    comment.type === "accessibility" && comment.type.toUpperCase()}
                 {comment &&
                     comment.type === "vibrancy" && comment.type.toUpperCase()}
                 {comment &&
                     comment.type === "community" && comment.type.toUpperCase()}
                 {comment &&
-                    comment.type === "transparency" && comment.type.toUpperCase()}
+                    comment.type === "engagement" && comment.type.toUpperCase()}
             </h3>
             <div className="comment">
                 <h3 className="commentContent">{comment.comment}</h3>

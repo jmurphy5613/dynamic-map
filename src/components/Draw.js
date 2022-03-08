@@ -15,7 +15,7 @@ const Draw = () => {
         iconSize: [75, 75],
         iconAnchor: [38, 28],
     });
-    var smallEquityBlue = new L.Icon({
+    var smallAccessibilityBlue = new L.Icon({
         iconUrl: "./icons/equity_user.png",
         iconSize: [75, 75],
         iconAnchor: [38, 22],
@@ -30,7 +30,7 @@ const Draw = () => {
         iconSize: [75, 75],
         iconAnchor: [38, 25],
     });
-    var smallTransparencyBlue = new L.Icon({
+    var smallEngagementBlue = new L.Icon({
         iconUrl: "./icons/transparency_user.png",
         iconSize: [75, 75],
         iconAnchor: [38, 25],
@@ -47,8 +47,8 @@ const Draw = () => {
                 },
                 {
                     enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallEquityBlue }),
-                    title: "Add Equity Action",
+                    handler: new L.Draw.Marker(map, { icon: smallAccessibilityBlue }),
+                    title: "Add Accessibility Action",
                 },
                 {
                     enabled: true,
@@ -62,8 +62,8 @@ const Draw = () => {
                 },
                 {
                     enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallTransparencyBlue }),
-                    title: "Add Transparency Action",
+                    handler: new L.Draw.Marker(map, { icon: smallEngagementBlue }),
+                    title: "Add Engagement Action",
                 },
             ];
         },

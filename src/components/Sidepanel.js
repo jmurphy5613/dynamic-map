@@ -59,65 +59,74 @@ function Sidepanel(props) {
                         <p>
                         <i>traducción a través de Google Translate</i>
                         </p>
-                        <h4>¡Bienvenido al mapa del Medford Comprehensive Plan!</h4>
+                        <h4>¡Bienvenido al segundo mapa comunitario del Plan integral de Medford!</h4>
                         <p>
-                        <b>¿Vive, trabaja, adora, juega, estudia o pasa el rato en Medford? ¡Este mapa es para ti!</b> Queremos conocer sus pensamientos y sueños para el Plan Medford. Utilice el mapa para identificar lugares en Medford y sus alrededores que sean importantes para usted. Haga clic para elegir un icono del menú de la barra lateral. Haga clic de nuevo para fijar su icono en el mapa al que pertenece. Puede agregar 3 tipos diferentes de pines al mapa:
+                        Después de recibir sus comentarios sobre el primer mapa de la comunidad, tuvimos una serie de reuniones para analizar nuestro análisis de sus comentarios y sugerencias. ¡Identificamos <b>5 temas clave</b> en sus comentarios y ahora queremos saber de usted nuevamente!
                         </p>
 
 
                         <div className="infoType">
-                            <img className="textIcon" src="/icons/place_user.png" alt="" />
+                            <img className="textIcon" src="/icons/climate.png" alt="" />
                             <p>
-                                <b>Lugar Especial ("Special Place"):</b> use el{" "}
+                                <b>Clima:</b> Usa el{" "}
                                 <img
-                                    className="inTextIcon place"
-                                    src="/icons/tool_add_place.png"
+                                    className="inTextIcon climate"
+                                    src="/icons/tool_add_climate.png"
                                     alt=""
-                                />{" "}para identificar lugares importantes en Medford y compartir historias sobre por qué estos lugares son importantes para usted.
-
+                                />{" "}
+                                para proponer ideas sobre el clima local.
                             </p>
                         </div>
                         <div className="infoType">
-                            <img className="textIcon" src="/icons/climate_user.png" alt="" />
+                            <img className="textIcon" src="/icons/equity.png" alt="" />
                             <p>
-                                <b>Idea:</b> utilice el {" "}<img
+                                <b>Accesibilidad:</b> Use {" "}<img
                                     className="inTextIcon"
-                                    src="/icons/tool_add_idea.png"
+                                    src="/icons/tool_add_equity.png"
                                     alt=""
                                 />{" "}
-                                para agregar sus ideas para mejorar Medford. ¿Hay lugares que le gustaría cambiar o preservar? ¿Qué falta en Medford y dónde debería ir?
+                                para identificar formas de hacer que Medford sea más equitativo.
                             </p>
                         </div>
                         <div className="infoType">
-                            <img className="textIcon" src="/icons/issue_user.png" alt="" />
+                            <img className="textIcon" src="/icons/vibrancy.png" alt="" />
                             <p>
-                                <b>Problema:</b> utilice{" "}
+                                <b>Vibrancia:</b> Use {" "}
                                 <img
                                     className="inTextIcon"
-                                    src="/icons/tool_add_issue.png"
+                                    src="/icons/tool_add_vibrancy.png"
                                     alt=""
                                 />{" "}
-                                para resaltar problemas o inquietudes que le gustaría que se corrigieran.
+                                para identificar formas de hacer que Medford sea más vibrante.
+                            </p>
+                        </div>
+                        
+                        <div className="infoType">
+                            <img className="textIcon" src="/icons/community.png" alt="" />
+                            <p>
+                                <b>Comunidad:</b> Use {" "}
+                                <img
+                                    className="inTextIcon"
+                                    src="/icons/tool_add_community.png"
+                                    alt=""
+                                />{" "}
+                                para identificar formas de apoyar a la comunidad de Medford.
+                            </p>
+                        </div>
+                        
+                        <div className="infoType">
+                            <img className="textIcon" src="/icons/transparency.png" alt="" />
+                            <p>
+                                <b>Compromiso:</b> identifique las formas en que la ciudad puede comunicarse e involucrar al público utilizando {" "}
+                                <img
+                                    className="inTextIcon"
+                                    src="/icons/tool_add_transparency.png"
+                                    alt=""
+                                />{" "}
                             </p>
                         </div>
                         <p>
-                        Cada vez que coloque un {" "}
-                                <img
-                                    className="inTextIcon place"
-                                    src="/icons/tool_add_place.png"
-                                    alt=""
-                                />, {" "}
-                                <img
-                                    className="inTextIcon"
-                                    src="/icons/tool_add_idea.png"
-                                    alt=""
-                                />
-                                , {" "}
-                                <img
-                                    className="inTextIcon"
-                                    src="/icons/tool_add_issue.png"
-                                    alt=""
-                                /> agregue un comentario para compartir lo que está pensando. Puede agregar tantos lugares, ideas o temas como desee.
+                        Cada vez que coloque un pin, agregue un comentario para compartir lo que está pensando. Puedes agregar tantos pines como quieras.
                         </p>
                         <p>
                         Al hacer clic en "Publicar"("Post"), su icono y el comentario se agregarán al mapa. Puede cambiar sus comentarios hasta que cierre el mapa. Sea respetuoso, ya que todos pueden ver los comentarios que comparte.
@@ -151,11 +160,12 @@ function Sidepanel(props) {
                         </p>
                         <p>
                         </p>
-                        <h4>Welcome to the Medford Comprehensive Plan Community Map!</h4>
+                        <h4>Welcome to the second community map for the Medford Comprehensive Plan!</h4>
                         <p>
-                        <b>Do you live, work, worship, play, study, or hang out in Medford? This map is for you!</b>
-                        We want to know your thoughts and dreams for the Medford plan.
-        Use the map to identify places in and around Medford that are important to you. Click to pick up an icon from the sidebar menu. Click again to pin your icon on the map where it belongs. You can add 3 different kinds of pins to the map:
+                        After receiving your feedback from the first community map, we had a series of meetings to discuss our analysis of your comments and suggestions. We identified <b>5 key themes</b> in your feedback and now we want to hear from you again!
+                        </p>
+                        <p>
+                        Use the map to identify places in and around Medford that are important to you. Click to pick up an icon of one of the 5 key themes related to your comment from the sidebar menu. Click again to pin your icon on the map where it belongs and share your thoughts with us.
                         </p>
 
 
@@ -174,7 +184,7 @@ function Sidepanel(props) {
                         <div className="infoType">
                             <img className="textIcon" src="/icons/equity.png" alt="" />
                             <p>
-                                <b>Equity:</b> Use the {" "}<img
+                                <b>Accessibility:</b> Use the {" "}<img
                                     className="inTextIcon"
                                     src="/icons/tool_add_equity.png"
                                     alt=""
@@ -211,13 +221,12 @@ function Sidepanel(props) {
                         <div className="infoType">
                             <img className="textIcon" src="/icons/transparency.png" alt="" />
                             <p>
-                                <b>Transparency:</b> Use the{" "}
+                                <b>Engagement:</b> Identify ways the city can communicate with and engage the public using {" "}
                                 <img
                                     className="inTextIcon"
                                     src="/icons/tool_add_transparency.png"
                                     alt=""
                                 />{" "}
-                                to identify ways to make Medford more transparent.
                             </p>
                         </div>
                         <p>
