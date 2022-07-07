@@ -19,11 +19,15 @@ import {
 import Draw from "./Draw";
 import Sidepanel from "./Sidepanel";
 import PopupComment from "./PopupComment";
-import MarkerFilter from "./MarkerFilter";
 import Filter from "./Filter";
 import "./Leaflet.css";
 
+import { useParams } from 'react-router-dom';
+
 function Leaflet(props) {
+
+    const { id } = useParams();
+
     const user = props.user;
     const admin = props.admin;
     const icons = getIcons();
@@ -380,7 +384,7 @@ function Leaflet(props) {
     return (
         <Fragment>
             <div id="map-div">
-                <Sidepanel comments={comments} points={points} map={map} />
+                <Sidepanel comments={comments} points={points} map={map} id={id} />
                 <Map
                     ref={(ref) => {
                         setMap(ref);

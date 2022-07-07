@@ -4,10 +4,16 @@ import { Sidebar, Tab } from "react-leaflet-sidebarv2";
 import SideComment from "./SideComment";
 import "./Sidepanel.css";
 
+import axios from "axios";
+import { useEffect } from 'react';
+import { useParams } from "react-router-dom";
+
 function Sidepanel(props) {
     const [collapsed, setCollapsed] = useState(false);
     const [selected, setSelected] = useState("home");
     const [language, setLanguage] = useState("English");
+
+    let { id } = useParams();
 
     let comments = props.comments;
 
@@ -19,6 +25,14 @@ function Sidepanel(props) {
             setSelected(id);
         }
     };
+
+    
+
+    useEffect(() => {
+        axios.get(`http://localhost:3001/maps/list/${id}`).then(res => {console.log(res.data.map)});
+        let element = document.getElementById('home');
+        element.style.backgroundColor = 'yellow';
+    }, [])
 
     return (
         <Sidebar
@@ -341,7 +355,7 @@ function Sidepanel(props) {
                         </p>
                         <p>
                         By adding your own stories, ideas, concerns, and unique places to the Map, you can participate in shaping this plan for Medford’s future.
-                        </p>                
+                        </p>
                         <p>
                         More information about the Medford Comprehensive Plan is available at: {" "}
                         </p>
