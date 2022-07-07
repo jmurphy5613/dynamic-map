@@ -26,12 +26,19 @@ function Sidepanel(props) {
         }
     };
 
-    
+    const setStyleAndContentValues = (map) => {
+        let header = document.getElementsByClassName('sidebar-header');
+        const rgbValues = JSON.parse(map.headerColor);
+        header[0].style.backgroundColor = `rgb(${rgbValues.r}, ${rgbValues.g}, ${rgbValues.b})`;
+        header[1].style.backgroundColor = `rgb(${rgbValues.r}, ${rgbValues.g}, ${rgbValues.b})`;
+        header[2].style.backgroundColor = `rgb(${rgbValues.r}, ${rgbValues.g}, ${rgbValues.b})`;
+
+    }
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/maps/list/${id}`).then(res => {console.log(res.data.map)});
-        let element = document.getElementById('home');
-        element.style.backgroundColor = 'yellow';
+        axios.get(`http://localhost:3001/maps/list/${id}`).then(res => {
+            setStyleAndContentValues(res.data.map);
+        });
     }, [])
 
     return (
