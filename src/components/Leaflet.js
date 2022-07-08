@@ -23,10 +23,18 @@ import Filter from "./Filter";
 import "./Leaflet.css";
 
 import { useParams } from 'react-router-dom';
+import axios from "axios";
 
 function Leaflet(props) {
 
+    
+    const [baseMap, setBaseMap] = useState("");
     const { id } = useParams();
+    useEffect(() => {
+        axios.get(`http://localhost:3001/maps/list/${id}`).then(res => {
+            setBaseMap(res.data.map.baseMap);
+        });
+    }, [])
 
     const user = props.user;
     const admin = props.admin;
@@ -121,9 +129,8 @@ function Leaflet(props) {
     //    "https://api.mapbox.com/styles/v1/interfacestudio/ckke4pj2z0njj17o5nwco65f5/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaW50ZXJmYWNlc3R1ZGlvIiwiYSI6ImNqeDNiank1djA4ZGE0OXJ3Nmw5dTEyNWgifQ.YIDGNNi8jg51LdgBOFCkbA";
 
     const mapboxSat =
-          "https://api.mapbox.com/styles/v1/landaudesign/ckp7lnszs5e9g18nuzy69f1ea/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFuZGF1ZGVzaWduIiwiYSI6ImNrZ3F4dDIyeTBsMXIyenIzd2EwdnBsZTQifQ.MOBff0ku-Z960ubZPr3b6g";
-    const Basemap =
-          "https://api.mapbox.com/styles/v1/landaudesign/ckp77s8iq50q518nuadzoh59x/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFuZGF1ZGVzaWduIiwiYSI6ImNrZ3F4dDIyeTBsMXIyenIzd2EwdnBsZTQifQ.MOBff0ku-Z960ubZPr3b6g";
+          "https://api.mapbox.com/styles/v1/mapbox/satellite-v9.html?title=true&access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NDg1bDA1cjYzM280NHJ5NzlvNDMifQ.d6e-nNyBDtmQCVwVNivz7A#3/0/0";
+    const Basemap = baseMap;
 
     delete L.Icon.Default.prototype._getIconUrl;
 
@@ -415,7 +422,7 @@ function Leaflet(props) {
                         <LayersControl.BaseLayer name="Satellite">
                             <TileLayer
                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> &copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> map by <a href="https://www.landau.design">LANDAU</a> + <a href="http://interface-studio.com/">Interface Studio</a>'
-                                url={mapboxSat}
+                                url={Basemap}
                             />
                         </LayersControl.BaseLayer>
                         

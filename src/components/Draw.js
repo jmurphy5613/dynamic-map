@@ -15,26 +15,7 @@ const Draw = () => {
         iconSize: [75, 75],
         iconAnchor: [38, 28],
     });
-    var smallAccessibilityBlue = new L.Icon({
-        iconUrl: "./icons/equity_user.png",
-        iconSize: [75, 75],
-        iconAnchor: [38, 22],
-    });
-    var smallVibrancyBlue = new L.Icon({
-        iconUrl: "./icons/vibrancy_user.png",
-        iconSize: [75, 75],
-        iconAnchor: [38, 25],
-    });
-    var smallCommunityBlue = new L.Icon({
-        iconUrl: "./icons/community_user.png",
-        iconSize: [75, 75],
-        iconAnchor: [38, 25],
-    });
-    var smallEngagementBlue = new L.Icon({
-        iconUrl: "./icons/transparency_user.png",
-        iconSize: [75, 75],
-        iconAnchor: [38, 25],
-    });
+
 
     L.DrawToolbar.include({
         getModeHandlers: function (map) {
@@ -44,26 +25,6 @@ const Draw = () => {
                     enabled: true,
                     handler: new L.Draw.Marker(map, { icon: smallClimateBlue }),
                     title: "Add Climate Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallAccessibilityBlue }),
-                    title: "Add Accessibility Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallVibrancyBlue }),
-                    title: "Add Vibrancy Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallCommunityBlue }),
-                    title: "Add Community Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallEngagementBlue }),
-                    title: "Add Engagement Action",
                 },
             ];
         },
