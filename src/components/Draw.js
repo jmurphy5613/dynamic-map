@@ -3,44 +3,101 @@ import { FeatureGroup, useLeaflet } from "react-leaflet";
 import L from "leaflet";
 import { EditControl } from "react-leaflet-draw";
 import firebase from "../firebase.js";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 import "./Draw.css";
 
 const Draw = () => {
     const { map } = useLeaflet();
+    const [iconsJson, setIconsJson] = useState([]);
+
+    const { id } = useParams();
+
+    useEffect(() => {
+        axios.get(`http://localhost:3001/maps/list/${id}`).then(res => {
+            setIconsJson(`[${res.data.map.icons}]`);
+            console.log(JSON.parse(`[${res.data.map.icons}]`));
+        });
+    }, []);
+
+
 
     // Hacky stuff below
     var smallClimateBlue = new L.Icon({
-        iconUrl: "./icons/climate_user.png",
+        iconUrl: "./icons/transparency_user.png",
         iconSize: [75, 75],
         iconAnchor: [38, 28],
     });
+    var smallAccessibilityBlue = new L.Icon({
+        iconUrl: "./icons/equity_user.png",
+        iconSize: [75, 75],
+        iconAnchor: [38, 22],
+    });
+    var smallVibrancyBlue = new L.Icon({
+        iconUrl: "./icons/vibrancy_user.png",
+        iconSize: [75, 75],
+        iconAnchor: [38, 25],
+    });
+    var smallCommunityBlue = new L.Icon({
+        iconUrl: "./icons/community_user.png",
+        iconSize: [75, 75],
+        iconAnchor: [38, 25],
+    });
+    var smallEngagementBlue = new L.Icon({
+        iconUrl: "./icons/engagement_user.png",
+        iconSize: [75, 75],
+        iconAnchor: [38, 25],
+    });
 
+    var newIcon = new L.Icon({
+        iconUrl: "/favicon.ico",
+        iconSize: [75, 75],
+        iconAnchor: [38, 25],
+    });
 
     L.DrawToolbar.include({
         getModeHandlers: function (map) {
             return [
                 {
-                    
                     enabled: true,
                     handler: new L.Draw.Marker(map, { icon: smallClimateBlue }),
                     title: "Add Climate Action",
                 },
+                {
+                    enabled: true,
+                    handler: new L.Draw.Marker(map, { icon: smallAccessibilityBlue }),
+                    title: "Add Accessibility Action",
+                },
+                {
+                    enabled: true,
+                    handler: new L.Draw.Marker(map, { icon: smallVibrancyBlue }),
+                    title: "Add Vibrancy Action",
+                },
+                {
+                    enabled: true,
+                    handler: new L.Draw.Marker(map, { icon: smallCommunityBlue }),
+                    title: "Add Community Action",
+                },
+                {
+                    enabled: true,
+                    handler: new L.Draw.Marker(map, { icon: smallEngagementBlue }),
+                    title: "Add Engagement Action",
+                },
+                {
+                    enabled: true,
+                    handler: new L.Draw.Marker(map, { icon: newIcon }),
+                    title: "Add Action",
+                },
+                {
+                    enabled: true,
+                    handler: new L.Draw.Marker(map, { icon: newIcon }),
+                    title: "Add Action",
+                }
             ];
         },
-    });
-
-    L.drawLocal.draw.toolbar.buttons.marker = "Add a comment";
-    L.drawLocal.draw.handlers.marker.tooltip.start =
-        "Click map to pin an Action item";
-    L.drawLocal.edit.toolbar.actions.save.text = "Save Changes";
-    L.drawLocal.edit.toolbar.actions.cancel.text = "Undo";
-    L.drawLocal.edit.handlers.remove.tooltip.text =
-        "Click on your comment to delete";
-    L.drawLocal.edit.toolbar.buttons.edit = "Edit your comments";
-    L.drawLocal.edit.toolbar.buttons.editDisabled = "No comments to edit";
-    L.drawLocal.edit.toolbar.buttons.remove = "Delete your comments";
-    L.drawLocal.edit.toolbar.buttons.removeDisabled = "No comments to delete";
+    });    
 
     // ----
     const deletePoint = (layer) => {

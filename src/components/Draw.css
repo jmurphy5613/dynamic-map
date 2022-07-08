@@ -38,7 +38,7 @@
 }
 
 .leaflet-draw-draw-marker:nth-of-type(4) {
-    background-image: url("/icons/tool_add_community.png") !important;
+    background-image: url("") !important;
     background-repeat: no-repeat;
     background-size: 30px 30px !important;
     background-position: 0 0 !important;

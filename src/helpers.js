@@ -174,7 +174,7 @@ function getIcons() {
     return {
         climate: L.Icon.extend({
             options: {
-                iconUrl: "./icons/climate.png",
+                iconUrl: "./assets/images/icons/climate.png",
                 iconAnchor: new L.Point(38, 18),
                 iconSize: new L.Point(76, 76),
             },
