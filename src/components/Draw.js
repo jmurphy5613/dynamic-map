@@ -16,7 +16,7 @@ const Draw = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/maps/list/${id}`).then(res => {
+        axios.get(`https://dynamic-maps-backend.herokuapp.com/maps/list/${id}`).then(res => {
             setIconsJson(`[${res.data.map.icons}]`);
             console.log(JSON.parse(`[${res.data.map.icons}]`));
         });

@@ -43,7 +43,7 @@ function Sidepanel(props) {
 
     useEffect(() => {
         console.log(id);
-        axios.get(`http://localhost:3001/maps/list/${id}`).then(res => {
+        axios.get(`https://dynamic-maps-backend.herokuapp.com/maps/list/${id}`).then(res => {
             console.log(res.data.map);
             setStyleAndContentValues(res.data.map);
         });
