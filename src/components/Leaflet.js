@@ -34,7 +34,7 @@ function Leaflet(props) {
     useEffect(() => {
         axios.get(`https://dynamic-maps-backend.herokuapp.com/maps/list/${id}`).then(res => {
             setBaseMap(res.data.map.baseMap);
-            setIcons(res.data.map.icons);
+            setIconsJson(res.data.map.icons);
         });
     }, [])
 
