@@ -17,8 +17,12 @@ const Draw = () => {
 
     useEffect(() => {
         axios.get(`https://dynamic-maps-backend.herokuapp.com/maps/list/${id}`).then(res => {
-            setIconsJson(`[${res.data.map.icons}]`);
-            console.log(JSON.parse(`[${res.data.map.icons}]`));
+            //delete the last comma from the json string
+            let jsonString = res.data.map.icons.slice(0, -1);
+            const newJsonString = `[${jsonString}]`;
+            console.log(JSON.parse(newJsonString));
+            
+            console.log(iconsJson);
         });
     }, []);
 
@@ -26,7 +30,7 @@ const Draw = () => {
 
     // Hacky stuff below
     var smallClimateBlue = new L.Icon({
-        iconUrl: "./icons/transparency_user.png",
+        iconUrl: "/icons/transparency_user.png",
         iconSize: [75, 75],
         iconAnchor: [38, 28],
     });
@@ -90,11 +94,6 @@ const Draw = () => {
                     handler: new L.Draw.Marker(map, { icon: newIcon }),
                     title: "Add Action",
                 },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: newIcon }),
-                    title: "Add Action",
-                }
             ];
         },
     });    
