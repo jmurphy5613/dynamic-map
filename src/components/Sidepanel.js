@@ -84,7 +84,7 @@ function Sidepanel(props) {
                             en Español
                         </button>
                         </p>
-                        <p>{homeDescription}</p>
+                        <div dangerouslySetInnerHTML={{ __html: homeDescription}}></div>
 
                         {/* <div className="infoType">
                             <img className="textIcon" src="/icons/climate.png" alt="" />
@@ -134,10 +134,10 @@ function Sidepanel(props) {
                             <button
                                 className="spanish button--primary"
                             >
-                                en Español
+                               en Español
                             </button>
                         </p>
-                    <p>{aboutDescription}</p>
+                    <div dangerouslySetInnerHTML={{ __html: aboutDescription }}></div>
                 </div>
             </Tab>
 

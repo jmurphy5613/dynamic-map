@@ -1,6 +1,6 @@
 import React from "react";
 import { FeatureGroup, useLeaflet } from "react-leaflet";
-import L from "leaflet";
+import L, { icon } from "leaflet";
 import { EditControl } from "react-leaflet-draw";
 import firebase from "../firebase.js";
 import { useEffect, useState } from "react";
@@ -12,6 +12,7 @@ import "./Draw.css";
 const Draw = () => {
     const { map } = useLeaflet();
     const [iconsJson, setIconsJson] = useState([]);
+    const [dataFetched, setDataFetched] = useState(false);
 
     const { id } = useParams();
 
@@ -20,13 +21,12 @@ const Draw = () => {
             //delete the last comma from the json string
             let jsonString = res.data.map.icons.slice(0, -1);
             const newJsonString = `[${jsonString}]`;
-            console.log(JSON.parse(newJsonString));
-            
-            console.log(iconsJson);
+            setIconsJson(JSON.parse(newJsonString));
+            setDataFetched(true);
         });
     }, []);
 
-
+    
 
     // Hacky stuff below
     var smallClimateBlue = new L.Icon({
@@ -61,43 +61,25 @@ const Draw = () => {
         iconAnchor: [38, 25],
     });
 
-    L.DrawToolbar.include({
-        getModeHandlers: function (map) {
-            return [
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallClimateBlue }),
-                    title: "Add Climate Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallAccessibilityBlue }),
-                    title: "Add Accessibility Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallVibrancyBlue }),
-                    title: "Add Vibrancy Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallCommunityBlue }),
-                    title: "Add Community Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallEngagementBlue }),
-                    title: "Add Engagement Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: newIcon }),
-                    title: "Add Action",
-                },
-            ];
-        },
-    });    
-
+    
+    if(dataFetched) {
+        const array2 = [{
+            enabled: true,
+            handler: new L.Draw.Marker(map, { icon: smallAccessibilityBlue }),
+            title: "Add Accessibility Action",
+        }, {
+            enabled: true,
+            handler: new L.Draw.Marker(map, { icon: smallAccessibilityBlue }),
+            title: "Add Accessibility Action",
+        }];
+        L.DrawToolbar.include({
+            getModeHandlers: function (map) {
+                return array2;
+            },
+        });  
+    } else {
+        console.log("no icons");
+    }
     // ----
     const deletePoint = (layer) => {
         const uid = layer.properties.id;
