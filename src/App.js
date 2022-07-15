@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import firebase from "./firebase";
 import "leaflet/dist/leaflet.css";
 import "./App.css";
@@ -31,16 +31,18 @@ function App() {
 
     return (
         <Router>
-            <Route exact path="/:id">
-                <Leaflet />
-            </Route>
-            <Route path="/admin">
-                {!user.isAnonymous ? (
-                    <Leaflet admin user={user} />
-                ) : (
-                    <Login authenticate={authenticate} failed={failed} />
-                )}
-            </Route>
+            <Switch>
+                <Route exact path="/">
+                    <Leaflet />
+                </Route>
+                <Route path="/admin">
+                    {!user.isAnonymous ? (
+                        <Leaflet admin user={user} />
+                    ) : (
+                        <Login authenticate={authenticate} failed={failed} />
+                    )}
+                </Route>
+            </Switch>
         </Router>
     );
 }

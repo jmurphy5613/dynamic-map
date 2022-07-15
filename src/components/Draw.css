@@ -1,4 +1,4 @@
-/* .leaflet-control-zoom-in {
+.leaflet-control-zoom-in {
     background-image: url("/icons/tool_zoom_in.png") !important;
     background-repeat: no-repeat;
     background-size: 30px 30px;
@@ -38,7 +38,7 @@
 }
 
 .leaflet-draw-draw-marker:nth-of-type(4) {
-    background-image: url("") !important;
+    background-image: url("/icons/tool_add_community.png") !important;
     background-repeat: no-repeat;
     background-size: 30px 30px !important;
     background-position: 0 0 !important;
@@ -70,4 +70,4 @@ a.leaflet-draw-edit-remove {
     width: 30px !important;
     background-color: white !important;
     padding-bottom: 2px;
-} */
+}
