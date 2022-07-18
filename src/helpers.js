@@ -1,4 +1,5 @@
 import L from "leaflet";
+import { Icons } from "./globals";
 
 function getBoundary() {
     return {
@@ -171,44 +172,7 @@ export { generateSampleData };
 // }
 
 function getIcons() {
-    return {
-        climate: L.Icon.extend({
-            options: {
-                iconUrl: "./icons/climate.png",
-                iconAnchor: new L.Point(38, 18),
-                iconSize: new L.Point(76, 76),
-            },
-        }),
-
-        accessibility: L.Icon.extend({
-            options: {
-                iconUrl: "./icons/equity.png",
-                iconAnchor: new L.Point(38, 18),
-                iconSize: new L.Point(75, 75),
-            },
-        }),
-        vibrancy: L.Icon.extend({
-            options: {
-                iconUrl: "./icons/vibrancy.png",
-                iconAnchor: new L.Point(38, 22),
-                iconSize: new L.Point(75, 75),
-            },
-        }),
-        community: L.Icon.extend({
-            options: {
-                iconUrl: "./icons/community.png",
-                iconAnchor: new L.Point(38, 22),
-                iconSize: new L.Point(75, 75),
-            },
-        }),
-        engagement: L.Icon.extend({
-            options: {
-                iconUrl: "./icons/transparency.png",
-                iconAnchor: new L.Point(38, 22),
-                iconSize: new L.Point(75, 75),
-            },
-        }),
-    };
+    return Icons;
 }
 
 export { getIcons };

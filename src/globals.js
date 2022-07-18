@@ -1,9 +1,5 @@
 import * as L from "leaflet";
 
-export const pageTitle = "";
-export const pageDescription = "";
-export const place = "";
-
 export const firebaseConfig = {
     apiKey: "AIzaSyCt0ewRsM4ltSTQ78gpnn7PZIUX52W31Lo",
     authDomain: "medfordmap2.firebaseapp.com",
@@ -17,8 +13,8 @@ export const firebaseConfig = {
 
 export const focusLocation = [42.4, -71.1];
 
-export const baseMap = "";
-export const satMap = "";
+export const baseMap = "https://api.mapbox.com/styles/v1/landaudesign/ckp77s8iq50q518nuadzoh59x/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFuZGF1ZGVzaWduIiwiYSI6ImNrZ3F4dDIyeTBsMXIyenIzd2EwdnBsZTQifQ.MOBff0ku-Z960ubZPr3b6g";
+export const satMap = "https://api.mapbox.com/styles/v1/landaudesign/ckp77s8iq50q518nuadzoh59x/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFuZGF1ZGVzaWduIiwiYSI6ImNrZ3F4dDIyeTBsMXIyenIzd2EwdnBsZTQifQ.MOBff0ku-Z960ubZPr3b6g";
 
 export const homePanelText = "<p>Medford Map</p><p>A map of Medford, MA</p>";
 
@@ -32,13 +28,51 @@ export const aboutPanelText = `<p>Medford Map</p><p>A map of Medford, MA</p>`;
 //     iconAnchor: [38, 28],
 // }
 
+
 export const Buttons = [
-    // {
-    //     enabled: true,
-    //     handler: new L.Draw.Marker(map, { icon: example }),
-    //     title: "Example",
-    // }
-]
+
+    
+];
+
+
+export const Icons = {
+    climate: L.Icon.extend({
+        options: {
+            iconUrl: "./icons/climate.png",
+            iconAnchor: new L.Point(38, 18),
+            iconSize: new L.Point(76, 76),
+        },
+    }),
+
+    accessibility: L.Icon.extend({
+        options: {
+            iconUrl: "./icons/equity.png",
+            iconAnchor: new L.Point(38, 18),
+            iconSize: new L.Point(75, 75),
+        },
+    }),
+    vibrancy: L.Icon.extend({
+        options: {
+            iconUrl: "./icons/vibrancy.png",
+            iconAnchor: new L.Point(38, 22),
+            iconSize: new L.Point(75, 75),
+        },
+    }),
+    community: L.Icon.extend({
+        options: {
+            iconUrl: "./icons/community.png",
+            iconAnchor: new L.Point(38, 22),
+            iconSize: new L.Point(75, 75),
+        },
+    }),
+    engagement: L.Icon.extend({
+        options: {
+            iconUrl: "./icons/transparency.png",
+            iconAnchor: new L.Point(38, 22),
+            iconSize: new L.Point(75, 75),
+        },
+    }),
+};
 
 
 //custom styles for the map here:

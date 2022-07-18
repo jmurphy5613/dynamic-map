@@ -3,6 +3,7 @@ import { FeatureGroup, useLeaflet } from "react-leaflet";
 import L from "leaflet";
 import { EditControl } from "react-leaflet-draw";
 import firebase from "../firebase.js";
+import { Buttons } from "../globals.js";
 
 import "./Draw.css";
 
@@ -38,34 +39,32 @@ const Draw = () => {
 
     L.DrawToolbar.include({
         getModeHandlers: function (map) {
-            return [
-                {
-                    
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallClimateBlue }),
-                    title: "Add Climate Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallAccessibilityBlue }),
-                    title: "Add Accessibility Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallVibrancyBlue }),
-                    title: "Add Vibrancy Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallCommunityBlue }),
-                    title: "Add Community Action",
-                },
-                {
-                    enabled: true,
-                    handler: new L.Draw.Marker(map, { icon: smallEngagementBlue }),
-                    title: "Add Engagement Action",
-                },
-            ];
+            return [        {
+            
+                enabled: true,
+                handler: new L.Draw.Marker(map, { icon: smallClimateBlue }),
+                title: "Add Climate Action",
+            },
+            {
+                enabled: true,
+                handler: new L.Draw.Marker(map, { icon: smallAccessibilityBlue }),
+                title: "Add Accessibility Action",
+            },
+            {
+                enabled: true,
+                handler: new L.Draw.Marker(map, { icon: smallVibrancyBlue }),
+                title: "Add Vibrancy Action",
+            },
+            {
+                enabled: true,
+                handler: new L.Draw.Marker(map, { icon: smallCommunityBlue }),
+                title: "Add Community Action",
+            },
+            {
+                enabled: true,
+                handler: new L.Draw.Marker(map, { icon: smallEngagementBlue }),
+                title: "Add Engagement Action",
+            },]
         },
     });
 

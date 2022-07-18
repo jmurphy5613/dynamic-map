@@ -22,12 +22,13 @@ import PopupComment from "./PopupComment";
 import MarkerFilter from "./MarkerFilter";
 import Filter from "./Filter";
 import "./Leaflet.css";
+import { focusLocation, baseMap, satMap } from '../globals';
 
 function Leaflet(props) {
     const user = props.user;
     const admin = props.admin;
     const icons = getIcons();
-    const position = [42.424930, -71.128840];
+    const position = focusLocation;
     const mapStyle = { height: "100vh" };
     const [map, setMap] = useState({});
     const [points, setPoints] = useState({});
